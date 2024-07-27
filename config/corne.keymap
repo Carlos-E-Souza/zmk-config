@@ -15,13 +15,11 @@
 
 / {
         macros {
-                zed: zed_em_kay {
+                fkey: fkey {
                         compatible = "zmk,behavior-macro";
                         #binding-cells = <0>;
                         bindings
-                                = <&macro_press &kp LSHFT>
-                                , <&macro_tap &kp Z &kp M &kp K>
-                                , <&macro_release &kp LSHFT>
+                                = <&macro_tap &kp Z &kp M &kp K>
                                 ;
                 };
         };
@@ -33,15 +31,25 @@
                         key-positions = <0 1>; //triggers
                         bindings = <&kp ESC>; //resolutions
                 };
-                toggle_ext_power {
+                ext_power_on {
                         timeout-ms = <50>; //time to activate bindings
-                        key-positions = <5 38>; //triggers
-                        bindings = <&ext_power EP_TOG>; //resolutions
+                        key-positions = <4 5 38>; //triggers
+                        bindings = <&ext_power EP_ON>; //resolutions
                 };
-                combo_ {
+                ext_power_off {
                         timeout-ms = <50>; //time to activate bindings
-                        key-positions = <24 32>; //triggers
-                        bindings = <&kp ESC>; //resolutions
+                        key-positions = <16 17 38>; //triggers
+                        bindings = <&ext_power EP_OFF>; //resolutions
+                };
+                ext_power_on_right {
+                        timeout-ms = <50>; //time to activate bindings
+                        key-positions = <6 7 39>; //triggers
+                        bindings = <&ext_power EP_ON>; //resolutions
+                };
+                ext_power_off_right {
+                        timeout-ms = <50>; //time to activate bindings
+                        key-positions = <18 19 39>; //triggers
+                        bindings = <&ext_power EP_OFF>; //resolutions
                 };
         };
 
@@ -50,9 +58,9 @@
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>; //keys 
                         flavor = "tap-unless-interrupted"; //only hold when tap another
-                        tapping-term-ms = <300>; //hold time
+                        tapping-term-ms = <1000>; //hold time
                         quick-tap-ms = <150>; //tap&hold quick to use tap kp
-                        require-prior-idle-ms = <125>; //tap if last tap is <125
+                        require-prior-idle-ms = <100>; //tap if last tap is <125
                         bindings = <&mo>, <&kp>; //momentary layer and key
                 };
                 bht: behavior_hold_tap {
@@ -61,7 +69,7 @@
                         flavor = "tap-preferred"; //only hold when tap another
                         tapping-term-ms = <300>; //hold time
                         quick-tap-ms = <150>; //tap&hold quick to use tap kp
-                        // require-prior-idle-ms = <125>; //tap if last tap is <125
+                        // require-prior-idle-ms = <100>; //tap if last tap is <125
                         bindings = <&kp>, <&kp>; // hold and tap
                 };
         };
@@ -85,12 +93,12 @@
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  UP  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| LEFT | DOWN | RIGHT | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+// | BTCLR| LEFT | DOWN | RIGHT | FKEY | BT5 |   | LFT | DWN |  UP | RGT |     |      |
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp TAB &kp N1 &kp UP &kp N3 &kp N4 &kp N5         &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
-   &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans   &trans &kp N4 &kp N5 &kp N6 &trans &trans
+   &trans &kp LEFT &kp DOWN &kp RIGHT &fkey &trans   &trans &kp N4 &kp N5 &kp N6 &trans &trans
    &kp LSHFT &trans &trans &trans &trans &trans         &trans &kp N1 &kp N2 &kp N3 &trans &trans
                       &kp LGUI &trans &kp LCTRL      &kp HOME &kp SPACE &kp N0
                         >;
