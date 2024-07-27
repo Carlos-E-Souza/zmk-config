@@ -32,22 +32,22 @@
                         bindings = <&kp ESC>; //resolutions
                 };
                 ext_power_on {
-                        timeout-ms = <50>; //time to activate bindings
+                        timeout-ms = <100>; //time to activate bindings
                         key-positions = <4 5 38>; //triggers
                         bindings = <&ext_power EP_ON>; //resolutions
                 };
                 ext_power_off {
-                        timeout-ms = <50>; //time to activate bindings
+                        timeout-ms = <100>; //time to activate bindings
                         key-positions = <16 17 38>; //triggers
                         bindings = <&ext_power EP_OFF>; //resolutions
                 };
                 ext_power_on_right {
-                        timeout-ms = <50>; //time to activate bindings
+                        timeout-ms = <100>; //time to activate bindings
                         key-positions = <6 7 39>; //triggers
                         bindings = <&ext_power EP_ON>; //resolutions
                 };
                 ext_power_off_right {
-                        timeout-ms = <50>; //time to activate bindings
+                        timeout-ms = <100>; //time to activate bindings
                         key-positions = <18 19 39>; //triggers
                         bindings = <&ext_power EP_OFF>; //resolutions
                 };
@@ -87,7 +87,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &bht SQT ENTER
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp QMARK
-                  &kp LALT &klht LOWER SPACE &kp LCTRL   &kp HOME &klht RAISE SPACE &kp END
+                  &kp LALT &klht LOWER SPACE &kp LCTRL   &bht RCTRL HOME &klht RAISE SPACE &kp END
                         >;
                 };
                 lower_layer {
@@ -99,8 +99,8 @@
                         bindings = <
    &kp TAB &kp N1 &kp UP &kp N3 &kp N4 &kp N5         &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
    &trans &kp LEFT &kp DOWN &kp RIGHT &fkey &trans   &trans &kp N4 &kp N5 &kp N6 &trans &trans
-   &kp LSHFT &trans &trans &trans &trans &trans         &trans &kp N1 &kp N2 &kp N3 &trans &trans
-                      &kp LGUI &trans &kp LCTRL      &kp HOME &kp SPACE &kp N0
+   &kp LSHFT &trans &trans &ext_power EP_OFF &ext_power EP_ON &ext_power EP_TOG    &trans &kp N1 &kp N2 &kp N3 &trans &trans
+                      &kp LGUI &trans &kp LCTRL      &bht RCTRL HOME &kp SPACE &kp N0
                         >;
                 };
 
