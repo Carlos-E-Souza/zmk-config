@@ -43,7 +43,7 @@
                         key-positions = <24 32>; //triggers
                         bindings = <&kp ESC>; //resolutions
                 };
-        }
+        };
 
         behaviors {
                 klht: key_layer_hold_tap {
