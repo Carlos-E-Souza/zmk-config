@@ -94,12 +94,12 @@
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  UP  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
 // | BTCLR| LEFT | DOWN | RIGHT | FKEY | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+// | SHFT | BT SEL 0  | BT SEL 1 |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp TAB &kp N1 &kp UP &kp N3 &kp N4 &kp N5         &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
-   &trans &kp LEFT &kp DOWN &kp RIGHT &fkey &trans   &trans &kp N4 &kp N5 &kp N6 &trans &trans
-   &kp LSHFT &trans &trans &ext_power EP_OFF &ext_power EP_ON &ext_power EP_TOG    &trans &kp N1 &kp N2 &kp N3 &trans &trans
+   &bt BT_CLR &kp LEFT &kp DOWN &kp RIGHT &fkey &trans   &trans &kp N4 &kp N5 &kp N6 &trans &trans
+   &kp LSHFT &bt BT_SEL 0 &bt BT_SEL 1 &ext_power EP_OFF &ext_power EP_ON &ext_power EP_TOG    &trans &kp N1 &kp N2 &kp N3 &trans &trans
                       &kp LGUI &trans &kp LCTRL      &bht RCTRL HOME &kp SPACE &kp N0
                         >;
                 };
